@@ -33,11 +33,11 @@ public class Reply {
 	
 	@ManyToOne
 	@JoinColumn(name = "boardId")
-	private Board board;
+	private Board board; //FK
 	
 	@ManyToOne
 	@JoinColumn(name = "userId")
-	private User user;
+	private User user; //FK
 	
 	@CreationTimestamp
 	private Timestamp createDate;
