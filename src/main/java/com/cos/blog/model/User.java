@@ -4,18 +4,22 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//@DynamicInsert //Insert 시 null인 필드 제외
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -36,8 +40,9 @@ public class User {
 	@Column(nullable = false, length = 50)
 	private String email;
 	
-	@ColumnDefault("'user'")
-	private String role;
+//	@ColumnDefault("user")
+	@Enumerated(EnumType.STRING)
+	private RoleType role;
 	
 	@CreationTimestamp //시간 자동 입력
 	private Timestamp createDate;
