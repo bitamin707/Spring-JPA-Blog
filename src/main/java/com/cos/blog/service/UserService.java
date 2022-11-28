@@ -17,9 +17,11 @@ public class UserService {
 	public void save(User user) { // 회원가입
 		userRepository.save(user);
 	}
-	
+
+	/* 기존 로그인 시스템
 	@Transactional(readOnly = true)
 	public User login(User user) { // 로그인
 		return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
 	}
+	*/
 }
