@@ -39,7 +39,6 @@ public class Board {
 	@Lob //대용량 데이터
 	private String content; //섬머노트 라이브러리
 	
-	@ColumnDefault("0")
 	private int count; //조회수
 
 	@ManyToOne //Many = Board, One = User, 한 계정에 여러 개 글 작성
