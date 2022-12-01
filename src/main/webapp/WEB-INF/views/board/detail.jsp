@@ -2,8 +2,8 @@
 <%@include file="../layout/header.jsp"%>
 <div class="container">
 	<button class="btn btn-secondary" onclick="history.back()">목록</button>
-	<button class="btn btn-warning" id="btn-update">수정</button>
 	<c:if test="${board.user.id == principal.user.id }">
+		<a href="/board/${board.id }/updateForm" class="btn btn-warning">수정</a>
 		<button class="btn btn-danger" id="btn-delete">삭제</button>
 	</c:if>
 	<br> <br>
