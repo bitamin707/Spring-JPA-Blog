@@ -19,7 +19,7 @@ public class SecurityConfig {
 
 	@Autowired
 	private PrincipalDetailService principalDetailService;
-	
+
 	@Bean
 	public BCryptPasswordEncoder encodePWD() { //해쉬 암호화
 		return new BCryptPasswordEncoder();
